@@ -8,6 +8,7 @@
 # maven 
 # curl
 # wget
+# tar
 
 export MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m"
 DEMO_HOME=`pwd`
@@ -80,6 +81,7 @@ echo "export MASTER=spark://localhost:7077" >> $ZEPPELIN_HOME/conf/zeppelin-env.
 echo "export SPARK_HOME=$SPARK_HOME" >> $ZEPPELIN_HOME/conf/zeppelin-env.sh 
 echo "export ZEPPELIN_PORT=8888" >> $ZEPPELIN_HOME/conf/zeppelin-env.sh
 echo "export ZEPPELIN_JAVA_OPTS=\"-Dspark.jars=$SPARK_CASSANDRA_CONNECTOR_HOME/spark-cassandra-connector-java/target/scala-2.10/spark-cassandra-connector-java-assembly-1.3.0-SNAPSHOT.jar\"" >> $ZEPPELIN_HOME/conf/zeppelin-env.sh
+echo "export ZEPPELIN_NOTEBOOK_DIR=\"$DEMO_HOME/notebooks/zeppelin\"" >> $ZEPPELIN_HOME/conf/zeppelin-env.sh
 
 #######################################################################
 # That's all folks

@@ -1,3 +1,3 @@
-# Clustering Checkins with Spark
+# Clustering check-in's with Spark
 
 

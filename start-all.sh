@@ -11,9 +11,6 @@ DEMO_HOME=`pwd`
 # start all
 cd $DEMO_HOME
 
-export CASSANDRA_HOME=$DEMO_HOME/apache-cassandra-2.1.7
-$CASSANDRA_HOME/bin/cassandra
-
 export SPARK_HOME=$DEMO_HOME/spark
 export SPARK_LOCAL_IP=localhost
 export SPARK_MASTER_IP=localhost
@@ -31,6 +28,9 @@ $ZEPPELIN_HOME/bin/zeppelin-daemon.sh start
 # you should see your zeppelin ide
 # remember to add spark.cassandra.connection.host = localhost in the spark context
 
+#last but not least start cassandra
+export CASSANDRA_HOME=$DEMO_HOME/apache-cassandra-2.1.7
+$CASSANDRA_HOME/bin/cassandra
 
 
 

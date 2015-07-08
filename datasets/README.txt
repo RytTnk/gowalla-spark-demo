@@ -15,6 +15,6 @@ E. Cho, S. A. Myers, J. Leskovec. Friendship and Mobility: Friendship and Mobili
 
 About the files in this directory:
 
-The files checkins.csv and venues.csv are a sample extract of the above dataset.
-In order to regenerate this files download the datasets as provided above and execute the python notebook lbsn.ipynb
+The files loc-gowalla_totalCheckins.txt and spots.txt are samples extracted from the above mentioned datasets.
+The files checkins.csv and venues.csv are generated from the given data sources. In order to regenerate this files download the datasets as provided above and execute the python notebook lbsn.ipynb
 

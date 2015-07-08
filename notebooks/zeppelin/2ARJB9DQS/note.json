@@ -1,0 +1,992 @@
+{
+  "paragraphs": [
+    {
+      "text": "sc.version",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432590045384_541076151",
+      "id": "20150525-234045_1993672298",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "res0: String \u003d 1.3.1\n"
+      },
+      "dateCreated": "May 25, 2015 11:40:45 PM",
+      "dateStarted": "Jul 9, 2015 12:17:30 AM",
+      "dateFinished": "Jul 9, 2015 12:17:52 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Load the cassandra-Spark connector library",
+      "text": "import com.datastax.spark.connector._\nimport com.datastax.spark.connector.cql._",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorHide": false,
+        "tableHide": true,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432590077190_-287242259",
+      "id": "20150525-234117_2046828345",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "import com.datastax.spark.connector._\nimport com.datastax.spark.connector.cql._\n"
+      },
+      "dateCreated": "May 25, 2015 11:41:17 PM",
+      "dateStarted": "Jul 9, 2015 12:17:55 AM",
+      "dateFinished": "Jul 9, 2015 12:17:57 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n##### Table imports and basic operations\n\nTable import can be done as RDD\u0027s or as Spark SQL/DataFrames.\nWhen done as RDD\u0027s, it\u0027s the developer responsibility to provide the right casting from the CassandraRow type to scala native types.",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "tableHide": false,
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432717763248_640715300",
+      "id": "20150527-110923_965931596",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch5\u003eTable imports and basic operations\u003c/h5\u003e\n\u003cp\u003eTable import can be done as RDD\u0027s or as Spark SQL/DataFrames.\n\u003cbr  /\u003eWhen done as RDD\u0027s, it\u0027s the developer responsibility to provide the right casting from the CassandraRow type to scala native types.\u003c/p\u003e\n"
+      },
+      "dateCreated": "May 27, 2015 11:09:23 AM",
+      "dateStarted": "Jul 9, 2015 12:18:04 AM",
+      "dateFinished": "Jul 9, 2015 12:18:05 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Table imports",
+      "text": "val checkins \u003d sc.cassandraTable(\"lbsn\", \"checkins\")\nval venues   \u003d sc.cassandraTable(\"lbsn\", \"venues\")",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "tableHide": true,
+        "editorHide": false,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432717561518_825132093",
+      "id": "20150527-110601_1586240884",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "checkins: com.datastax.spark.connector.rdd.CassandraTableScanRDD[com.datastax.spark.connector.CassandraRow] \u003d CassandraTableScanRDD[0] at RDD at CassandraRDD.scala:15\nvenues: com.datastax.spark.connector.rdd.CassandraTableScanRDD[com.datastax.spark.connector.CassandraRow] \u003d CassandraTableScanRDD[1] at RDD at CassandraRDD.scala:15\n"
+      },
+      "dateCreated": "May 27, 2015 11:06:01 AM",
+      "dateStarted": "Jul 9, 2015 12:18:10 AM",
+      "dateFinished": "Jul 9, 2015 12:18:13 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Checkins",
+      "text": "checkins.count()\ncheckins.first()",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432718133099_-947206352",
+      "id": "20150527-111533_1525954664",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "res4: Long \u003d 138449\nres5: com.datastax.spark.connector.CassandraRow \u003d CassandraRow{year: 2010, month: 7, day: 1, time: 11, uid: 74226, lat: 40.75548535, lon: -73.99116677, ts: 2010-07-01 02:00:11+0200, vid: 1365122}\n"
+      },
+      "dateCreated": "May 27, 2015 11:15:33 AM",
+      "dateStarted": "Jul 9, 2015 12:18:23 AM",
+      "dateFinished": "Jul 9, 2015 12:18:36 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Venues",
+      "text": "venues.count()\nvenues.first()",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432718144890_1975361617",
+      "id": "20150527-111544_1952100840",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "res7: Long \u003d 28699\nres8: com.datastax.spark.connector.CassandraRow \u003d CassandraRow{vid: 754108, lat: 40.7480915333, lon: -73.9891771, name: My Suit NY }\n"
+      },
+      "dateCreated": "May 27, 2015 11:15:44 AM",
+      "dateStarted": "Jul 9, 2015 12:18:52 AM",
+      "dateFinished": "Jul 9, 2015 12:18:55 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Query the collection using the cassandraRow API",
+      "text": "%md\nThe where clause translates back into cql, therefore it would allow selection on partition key and range on clustering key.",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "tableHide": false,
+        "editorHide": false,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432719793919_-1724471938",
+      "id": "20150527-114313_1667897903",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cp\u003eThe where clause translates back into cql, therefore it would allow selection on partition key and range on clustering key.\u003c/p\u003e\n"
+      },
+      "dateCreated": "May 27, 2015 11:43:13 AM",
+      "dateStarted": "Jul 9, 2015 12:03:39 AM",
+      "dateFinished": "Jul 9, 2015 12:03:39 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Time range Query",
+      "text": "// how many checkins in new york during the valentine weekend\n\ncheckins.where(\"year \u003d 2010 and month\u003d2 and day\u003e12 and day\u003c15\").count()",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432719434247_174787671",
+      "id": "20150527-113714_1109272181",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "res12: Long \u003d 887\n"
+      },
+      "dateCreated": "May 27, 2015 11:37:14 AM",
+      "dateStarted": "Jul 9, 2015 12:19:00 AM",
+      "dateFinished": "Jul 9, 2015 12:19:02 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Where is Central Park?",
+      "text": "venues.where(\"vid \u003d 7239827\").first()\n",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432718256017_1333736725",
+      "id": "20150527-111736_491790695",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "res14: com.datastax.spark.connector.CassandraRow \u003d CassandraRow{vid: 7239827, lat: 40.758265613, lon: -73.994356727, name: Central Park Manhattan }\n"
+      },
+      "dateCreated": "May 27, 2015 11:17:36 AM",
+      "dateStarted": "Jul 9, 2015 12:19:08 AM",
+      "dateFinished": "Jul 9, 2015 12:19:09 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Column selection",
+      "text": "venues.select(\"vid\", \"name\").take(10).foreach(println)\n",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432719916428_1753273370",
+      "id": "20150527-114516_2133677116",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "CassandraRow{vid: 754108, name: My Suit NY }\nCassandraRow{vid: 249755, name: UA Court Street Stadium 12}\nCassandraRow{vid: 6919688, name: Nasty London!}\nCassandraRow{vid: 521775, name: Calico Jacks Cantina}\nCassandraRow{vid: 866136, name: Pho Bac}\nCassandraRow{vid: 3841997, name: cave of the ridiculous}\nCassandraRow{vid: 246266, name: Sky Asian Bistro}\nCassandraRow{vid: 6762177, name: All Star Car Wash}\nCassandraRow{vid: 797962, name: Blush}\nCassandraRow{vid: 535067, name: Thompson Lower East Side}\n"
+      },
+      "dateCreated": "May 27, 2015 11:45:16 AM",
+      "dateStarted": "Jul 9, 2015 12:19:13 AM",
+      "dateFinished": "Jul 9, 2015 12:19:15 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n##### Converting to native scala types, for instance tuples\nThe CassandraTable produces an RDD of type CassandraRow. If you want to move away from the CassandraRow type you can map to other types, using the usual spark transformations (map, reduce, flatmap, etc.)",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "tableHide": false,
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432719986904_866502131",
+      "id": "20150527-114626_1437072784",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch5\u003eConverting to native scala types, for instance tuples\u003c/h5\u003e\n\u003cp\u003eThe CassandraTable produces an RDD of type CassandraRow. If you want to move away from the CassandraRow type you can map to other types, using the usual spark transformations (map, reduce, flatmap, etc.)\u003c/p\u003e\n"
+      },
+      "dateCreated": "May 27, 2015 11:46:26 AM",
+      "dateStarted": "Jun 18, 2015 10:16:02 AM",
+      "dateFinished": "Jun 18, 2015 10:16:02 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Who checked in Soho?",
+      "text": "// soho bounding box: -74.0055, 40.7187, -73.9959, 40.7296\n\n// from CassandraRow to scala Tuples\n\nval coords \u003d checkins.map(row \u003d\u003e (row.getDouble(\"lat\"), row.getDouble(\"lon\")))\n\ncoords.\n  filter(coord \u003d\u003e coord._1 \u003e 40.7187 \u0026 coord._1 \u003c 40.7296).\n  filter(coord \u003d\u003e coord._2 \u003e -74.0055 \u0026 coord._2 \u003c -73.9959).\n  count()",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432718398874_-1156926795",
+      "id": "20150527-111958_961707599",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "coords: org.apache.spark.rdd.RDD[(Double, Double)] \u003d MapPartitionsRDD[1477] at map at \u003cconsole\u003e:90\nres596: Long \u003d 4825\n"
+      },
+      "dateCreated": "May 27, 2015 11:19:58 AM",
+      "dateStarted": "Jun 18, 2015 10:16:13 AM",
+      "dateFinished": "Jun 18, 2015 10:16:15 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "filtering on Columns, Map to Tuples",
+      "text": "// from CassandraRow to some other object\n\n// via cassandraRow methods\nvenues.select(\"vid\", \"name\").map(row \u003d\u003e (row.getLong(\"vid\"), row.getString(\"name\"))).take(10).foreach(println)\n",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432720278250_1572930116",
+      "id": "20150527-115118_1723421919",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "(1162492,Hillary Flowers)\n(1165309,Roadside Entertainment)\n(703772,Pan Aqua)\n(396792,O\u0027Reilly\u0027s Pub)\n(447153,Kam Wei Kitchen)\n(7558564,SouthWestNY)\n(7410669,Windsor Hotel)\n(6856641,New Rochelle High School)\n(267286,US Flag Plaza, Liberty Park, NJ)\n(262669,Galloway Castle)\n"
+      },
+      "dateCreated": "May 27, 2015 11:51:18 AM",
+      "dateStarted": "Jun 18, 2015 10:16:13 AM",
+      "dateFinished": "Jun 18, 2015 10:16:15 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Filtering on columns, Map to case class",
+      "text": "// by defining a case class\ncase class Venue(vid: Long, name: String)\nsc.cassandraTable[Venue](\"lbsn\", \"venues\").take(10).foreach(println)",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432720481426_2121306212",
+      "id": "20150527-115441_1429307717",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "defined class Venue\nVenue(1162492,Hillary Flowers)\nVenue(1165309,Roadside Entertainment)\nVenue(703772,Pan Aqua)\nVenue(396792,O\u0027Reilly\u0027s Pub)\nVenue(447153,Kam Wei Kitchen)\nVenue(7558564,SouthWestNY)\nVenue(7410669,Windsor Hotel)\nVenue(6856641,New Rochelle High School)\nVenue(267286,US Flag Plaza, Liberty Park, NJ)\nVenue(262669,Galloway Castle)\n"
+      },
+      "dateCreated": "May 27, 2015 11:54:41 AM",
+      "dateStarted": "Jun 18, 2015 10:16:15 AM",
+      "dateFinished": "Jun 18, 2015 10:16:17 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n##### SQL schema extraction with Spark SQL\nBy using the CassandraSQLContext, the schema is extracted from a sample of the read data. Therefore no explicit casting/mapping is required, and you can move faster to standard scala native types.",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432720763673_2141326834",
+      "id": "20150527-115923_713657747",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch5\u003eSQL schema extraction with Spark SQL\u003c/h5\u003e\n\u003cp\u003eBy using the CassandraSQLContext, the schema is extracted from a sample of the read data. Therefore no explicit casting/mapping is required, and you can move faster to standard scala native types.\u003c/p\u003e\n"
+      },
+      "dateCreated": "May 27, 2015 11:59:23 AM",
+      "dateStarted": "Jun 18, 2015 10:16:02 AM",
+      "dateFinished": "Jun 18, 2015 10:16:02 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Table import with Spark SQL/DataFrame",
+      "text": "// by converting to a spark sql/dataframe\nimport org.apache.spark.sql.cassandra.CassandraSQLContext\nval cc \u003d new CassandraSQLContext(sc)\nval df_venues \u003d cc.sql(\"select vid, name from lbsn.venues\")\n",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432720642159_-167936064",
+      "id": "20150527-115722_1084797803",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "import org.apache.spark.sql.cassandra.CassandraSQLContext\ncc: org.apache.spark.sql.cassandra.CassandraSQLContext \u003d org.apache.spark.sql.cassandra.CassandraSQLContext@dd4d967\ndf_venues: org.apache.spark.sql.DataFrame \u003d [vid: bigint, name: string]\n"
+      },
+      "dateCreated": "May 27, 2015 11:57:22 AM",
+      "dateStarted": "Jul 9, 2015 12:19:40 AM",
+      "dateFinished": "Jul 9, 2015 12:19:43 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df_venues.show(10)",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432590189646_-302446680",
+      "id": "20150525-234309_208755663",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "vid     name                \n754108  My Suit NY          \n249755  UA Court Street S...\n6919688 Nasty London!       \n521775  Calico Jacks Cantina\n866136  Pho Bac             \n3841997 cave of the ridic...\n246266  Sky Asian Bistro    \n6762177 All Star Car Wash   \n797962  Blush               \n535067  Thompson Lower Ea...\n"
+      },
+      "dateCreated": "May 25, 2015 11:43:09 PM",
+      "dateStarted": "Jul 9, 2015 12:19:48 AM",
+      "dateFinished": "Jul 9, 2015 12:19:49 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n##### Cassandra-side vs Spark-side Filtering\n\nWhen the query is compatible with cql filtering and selection is executed fully on the cassandra side. By using the CassandraSQL context you can also define a query which would require also some filtering on the spark side.",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432721218517_-1572445217",
+      "id": "20150527-120658_1608038810",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch5\u003eCassandra-side vs Spark-side Filtering\u003c/h5\u003e\n\u003cp\u003eWhen the query is compatible with cql filtering and selection is executed fully on the cassandra side. By using the CassandraSQL context you can also define a query which would require also some filtering on the spark side.\u003c/p\u003e\n"
+      },
+      "dateCreated": "May 27, 2015 12:06:58 PM",
+      "dateStarted": "Jun 18, 2015 10:16:02 AM",
+      "dateFinished": "Jun 18, 2015 10:16:02 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Cassandra-side filtering",
+      "text": "// as RDD of CassandraRows\nval checkins \u003d sc.cassandraTable(\"lbsn\", \"checkins\").select(\"ts\", \"uid\", \"vid\").where(\"year\u003d2010 and month\u003d9 and day\u003c16 and day\u003e13\")\ncheckins.take(10).foreach(println)\n\n// as a SchemaRDD\nval checkins \u003d cc.sql(\"select ts, uid, vid from lbsn.checkins where year\u003d2010 and month\u003d9 and day\u003c16 and day\u003e13\")\ncheckins.show(10)\n",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432721000835_598617850",
+      "id": "20150527-120320_104479665",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "checkins: com.datastax.spark.connector.rdd.CassandraTableScanRDD[com.datastax.spark.connector.CassandraRow] \u003d CassandraTableScanRDD[17] at RDD at CassandraRDD.scala:15\nCassandraRow{ts: 2010-09-14 02:01:31+0200, uid: 853, vid: 917955}\nCassandraRow{ts: 2010-09-14 02:05:28+0200, uid: 4516, vid: 37160}\nCassandraRow{ts: 2010-09-14 02:05:44+0200, uid: 2964, vid: 956870}\nCassandraRow{ts: 2010-09-14 02:05:59+0200, uid: 48555, vid: 3026508}\nCassandraRow{ts: 2010-09-14 02:11:28+0200, uid: 189786, vid: 1036251}\nCassandraRow{ts: 2010-09-14 02:14:33+0200, uid: 33841, vid: 1502210}\nCassandraRow{ts: 2010-09-14 02:16:07+0200, uid: 12719, vid: 1078872}\nCassandraRow{ts: 2010-09-14 02:18:17+0200, uid: 105012, vid: 341495}\nCassandraRow{ts: 2010-09-14 02:19:24+0200, uid: 1214, vid: 1205097}\nCassandraRow{ts: 2010-09-14 02:22:20+0200, uid: 189786, vid: 541535}\ncheckins: org.apache.spark.sql.DataFrame \u003d [ts: timestamp, uid: bigint, vid: bigint]\nts                   uid    vid    \n2010-09-14 02:01:... 853    917955 \n2010-09-14 02:05:... 4516   37160  \n2010-09-14 02:05:... 2964   956870 \n2010-09-14 02:05:... 48555  3026508\n2010-09-14 02:11:... 189786 1036251\n2010-09-14 02:14:... 33841  1502210\n2010-09-14 02:16:... 12719  1078872\n2010-09-14 02:18:... 105012 341495 \n2010-09-14 02:19:... 1214   1205097\n2010-09-14 02:22:... 189786 541535 \n"
+      },
+      "dateCreated": "May 27, 2015 12:03:20 PM",
+      "dateStarted": "Jul 9, 2015 12:20:23 AM",
+      "dateFinished": "Jul 9, 2015 12:20:26 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Spark-side filtering",
+      "text": "val checkins \u003d cc.sql(\"select ts, uid, vid from lbsn.checkins where day\u003c16 and day\u003e13\")\ncheckins.show(10)",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432721631697_623698216",
+      "id": "20150527-121351_1525574369",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "checkins: org.apache.spark.sql.DataFrame \u003d [ts: timestamp, uid: bigint, vid: bigint]\nts                   uid   vid   \n2010-07-14 02:00:... 9024  107406\n2010-07-14 02:01:... 79128 147618\n2010-07-14 02:02:... 11372 187679\n2010-07-14 02:03:... 23665 19762 \n2010-07-14 02:09:... 89502 299617\n2010-07-14 02:10:... 33494 244214\n2010-07-14 02:13:... 33843 11975 \n2010-07-14 02:14:... 84107 780336\n2010-07-14 02:15:... 718   54022 \n2010-07-14 02:16:... 578   268521\n"
+      },
+      "dateCreated": "May 27, 2015 12:13:51 PM",
+      "dateStarted": "Jul 9, 2015 12:20:37 AM",
+      "dateFinished": "Jul 9, 2015 12:20:38 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Combined Cassandra-side \u0026 Spark-side filtering",
+      "text": "val checkins \u003d cc.sql(\"select ts, uid, vid from lbsn.checkins where year\u003d2010 and month\u003d9 and vid\u003d57871\")\ncheckins.show(10)",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432721712577_1166902366",
+      "id": "20150527-121512_1013813562",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "checkins: org.apache.spark.sql.DataFrame \u003d [ts: timestamp, uid: bigint, vid: bigint]\nts                   uid  vid  \n2010-10-01 01:57:... 1684 57871\n"
+      },
+      "dateCreated": "May 27, 2015 12:15:12 PM",
+      "dateStarted": "Jul 9, 2015 12:21:00 AM",
+      "dateFinished": "Jul 9, 2015 12:21:02 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Joining cassandra tables in Spark",
+      "text": "// joining tables (the easy way, and just as fast)\n\nval df_venues   \u003d cc.sql(\"select vid, name from lbsn.venues\").as(\"venues\").cache()\nval df_checkins \u003d cc.sql(\"select ts, uid, lat, lon, vid from lbsn.checkins\").as(\"checkins\").cache()\n\nval checkins_venues \u003d df_checkins.join(df_venues, $\"checkins.vid\" \u003d\u003d\u003d $\"venues.vid\", \"inner\").select(\"ts\", \"uid\", \"lat\", \"lon\", \"checkins.vid\",\"name\")\n\ncheckins_venues.show(10)",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432590425203_-293290972",
+      "id": "20150525-234705_2017691418",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "df_venues: org.apache.spark.sql.DataFrame \u003d [vid: bigint, name: string]\ndf_checkins: org.apache.spark.sql.DataFrame \u003d [ts: timestamp, uid: bigint, lat: double, lon: double, vid: bigint]\ncheckins_venues: org.apache.spark.sql.DataFrame \u003d [ts: timestamp, uid: bigint, lat: double, lon: double, vid: bigint, name: string]\nts                   uid    lat           lon                vid     name                \n2010-07-01 02:47:... 578    40.7490532543 -73.9680397511     11831   United Nations      \n2010-07-02 18:27:... 991    40.7188502243 -73.99594579149999 818431  OK 218              \n2010-07-03 02:07:... 34359  40.7348441565 -73.9995288849     123831  Kingswood           \n2010-07-03 18:58:... 578    40.6838680433 -73.9786720276     105831  Pacific Street St...\n2010-07-03 19:53:... 2737   40.6906938667 -73.9956976167     197431  Floyd, NY           \n2010-07-03 23:11:... 49393  40.6997066969 -73.8085234165     28031   Jamaica LIRR Station\n2010-07-04 03:40:... 119601 40.7490532543 -73.9680397511     11831   United Nations      \n2010-07-05 06:49:... 128772 40.8344876113 -73.9385139942     1241631 Morris Jumel Mansion\n2010-07-06 07:36:... 38706  40.7490532543 -73.9680397511     11831   United Nations      \n2010-07-06 17:12:... 35105  40.6997066969 -73.8085234165     28031   Jamaica LIRR Station\n"
+      },
+      "dateCreated": "May 25, 2015 11:47:05 PM",
+      "dateStarted": "Jul 9, 2015 12:21:38 AM",
+      "dateFinished": "Jul 9, 2015 12:21:48 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Aggregate and group by",
+      "text": "// top 10 checked in venues\ncheckins_venues.groupBy(\"name\").count().sort($\"count\".desc).show(10)",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432590556428_-1134585219",
+      "id": "20150525-234916_2129265918",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "name                 count\nLGA LaGuardia Air... 1673 \nJFK John F. Kenne... 1643 \nStarbucks            1316 \nStarbucks Coffee     1114 \nEWR Newark Libert... 1084 \nTimes Square         1084 \nGrand Central Ter... 1002 \nDunkin\u0027 Donuts       507  \nMadison Square Ga... 426  \nThe Museum of Mod... 392  \n"
+      },
+      "dateCreated": "May 25, 2015 11:49:16 PM",
+      "dateStarted": "Jul 9, 2015 12:22:04 AM",
+      "dateFinished": "Jul 9, 2015 12:22:10 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Machine Learning: k-means Clustering",
+      "text": "// run k-means clustering on the data\n\nimport org.apache.spark.mllib.clustering.KMeans\nimport org.apache.spark.mllib.linalg.Vectors\n\nval locs \u003d checkins_venues.select(\"lat\",\"lon\").map(s \u003d\u003e Vectors.dense(s.getDouble(0), s.getDouble(1))).cache()\nlocs.first()\n\nval numClusters \u003d 50\nval numIterations \u003d 20\nval clusters \u003d KMeans.train(locs, numClusters, numIterations)\n\nprintln()\n\nval WSSSE \u003d clusters.computeCost(locs)\nprintln(\"Within Set Sum of Squared Errors \u003d \" + WSSSE + \"\\n\")\n\nclusters.clusterCenters.foreach(println)\n",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432799823040_-122604534",
+      "id": "20150528-095703_1809695413",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "import org.apache.spark.mllib.clustering.KMeans\nimport org.apache.spark.mllib.linalg.Vectors\nlocs: org.apache.spark.rdd.RDD[org.apache.spark.mllib.linalg.Vector] \u003d MapPartitionsRDD[67] at map at DataFrame.scala:848\nres44: org.apache.spark.mllib.linalg.Vector \u003d [40.663200646,-73.984763295]\nnumClusters: Int \u003d 50\nnumIterations: Int \u003d 20\nclusters: org.apache.spark.mllib.clustering.KMeansModel \u003d org.apache.spark.mllib.clustering.KMeansModel@77b7f07b\n\nWSSSE: Double \u003d 11.051512212406834\nWithin Set Sum of Squared Errors \u003d 11.051512212406834\n\n[40.72760996107598,-73.98843612291218]\n[40.64528778525469,-74.23562853133915]\n[40.76587038674041,-73.982835425778]\n[40.64524967416557,-73.78403168243933]\n[40.80733971996237,-73.95276889804212]\n[40.69057039696831,-74.17928359461052]\n[40.80956608048502,-73.80586643992105]\n[40.826054341673164,-74.21764724121967]\n[40.62509347376819,-74.02362352200252]\n[40.76116140797602,-73.92278173442114]\n[40.772467674250905,-74.06082584484696]\n[40.6868860310219,-73.99446411760995]\n[40.75991678471516,-73.77698501522235]\n[40.75600596970275,-73.83891460672425]\n[40.82129892703904,-73.9997584348007]\n[40.82453776148976,-74.14788466948757]\n[40.73999826212862,-74.00357123619891]\n[40.7381988641431,-74.03137203290099]\n[40.71597471740121,-73.84580435787593]\n[40.75612182066293,-73.9904182966687]\n[40.7343207431131,-74.24555770980237]\n[40.69417058885285,-73.92487807224201]\n[40.740617581651165,-74.16539907729027]\n[40.870504955516026,-73.91239037579213]\n[40.909676976814104,-73.78938532312557]\n[40.72392463078714,-73.95112790782109]\n[40.645342458749354,-74.07343944497202]\n[40.86099651207105,-73.83109324743283]\n[40.91198283153501,-74.07418438907202]\n[40.58595657093604,-74.16087820902399]\n[40.84664428917131,-73.87743821851033]\n[40.89416567803943,-74.17770651985201]\n[40.82645859094547,-74.08624934047288]\n[40.72396915025653,-74.00051298440654]\n[40.6716716880268,-73.975864864389]\n[40.75650666187875,-73.97457438097082]\n[40.773907084185545,-73.87170829220344]\n[40.71567180323299,-74.04668645276098]\n[40.773653243529495,-73.95475384649608]\n[40.629011780546726,-74.11585749142486]\n[40.62210118287503,-73.91113064438204]\n[40.74238004580452,-73.88816687387995]\n[40.89932759833246,-74.03018745470713]\n[40.528666028627335,-74.22925464372355]\n[40.835799771740746,-73.93656020885119]\n[40.70941278931092,-74.01105383284828]\n[40.5793081063317,-73.97727552300873]\n[40.74263339114348,-73.98756549458206]\n[40.706615245134685,-73.8005054832875]\n[40.59223483014998,-73.80989849026484]\n"
+      },
+      "dateCreated": "May 28, 2015 9:57:03 AM",
+      "dateStarted": "Jul 9, 2015 12:22:19 AM",
+      "dateFinished": "Jul 9, 2015 12:22:32 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Machine Learning: Score predictions",
+      "text": "\nimport org.apache.spark.sql.functions.udf\n\nval func \u003d (lat:Double, lon:Double) \u003d\u003e clusters.predict(Vectors.dense(lat,lon))\nval sqlfunc \u003d udf(func)\n\n// add predictions as extra column, by using a user define function\n// remember that clusters closes over the udf, and is broadcasted to the various executors\nval locs_cid \u003d checkins_venues.withColumn(\"cluster\", sqlfunc(checkins_venues(\"lat\"), checkins_venues(\"lon\")))\n\nlocs_cid.show(10)\n",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432812324451_1990364296",
+      "id": "20150528-132524_1901310525",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "import org.apache.spark.sql.functions.udf\nfunc: (Double, Double) \u003d\u003e Int \u003d \u003cfunction2\u003e\nsqlfunc: org.apache.spark.sql.UserDefinedFunction \u003d UserDefinedFunction(\u003cfunction2\u003e,IntegerType)\nlocs_cid: org.apache.spark.sql.DataFrame \u003d [ts: timestamp, uid: bigint, lat: double, lon: double, vid: bigint, name: string, cluster: int]\nts                   uid    lat           lon                vid     name                 cluster\n2010-07-01 02:03:... 10231  40.663200646  -73.984763295      1225113 Thistle Hill Tavern  34     \n2010-07-01 02:06:... 4907   40.74101965   -73.99416911670001 1078263 Limelight Marketp... 47     \n2010-07-01 02:10:... 4929   40.747507     -73.989425         1175513 La Rosa Cigars       47     \n2010-07-01 02:14:... 26851  40.76823395   -73.95315415       164621  David Copperfields   38     \n2010-07-01 02:17:... 4929   40.74695265   -73.9857679833     141918  J.J. Hat Center      47     \n2010-07-01 02:23:... 4929   40.7484436586 -73.9857316017     12313   Empire State Buil... 47     \n2010-07-01 02:25:... 24712  40.6752607557 -73.9813770354     296249  Al di lá Trattoria   34     \n2010-07-01 02:26:... 6639   40.7373236513 -73.9910423756     261515  Havana Central       47     \n2010-07-01 02:27:... 158638 40.82951468   -73.92625695       153115  Yankees Ticket Of... 44     \n2010-07-01 02:27:... 124703 40.826946067  -73.92811775210001 11720   Yankee Stadium       44     \n"
+      },
+      "dateCreated": "May 28, 2015 1:25:24 PM",
+      "dateStarted": "Jul 9, 2015 12:22:40 AM",
+      "dateFinished": "Jul 9, 2015 12:22:45 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d locs_cid.select(\"cluster\", \"name\").\n    groupBy(\"cluster\", \"name\").\n    agg(Map(\"name\" -\u003e \"count\")).\n    sort($\"cluster\", $\"COUNT(name)\".desc).cache()\n    \ndf.show()    \n    \n",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1432819281971_1801397794",
+      "id": "20150528-152121_1489205140",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "df: org.apache.spark.sql.DataFrame \u003d [cluster: int, name: string, COUNT(name): bigint]\ncluster name                 COUNT(name)\n0       Starbucks Coffee     172        \n0       Regal Union Squar... 118        \n0       Whole Foods Marke... 95         \n0       AOL HQ               92         \n0       Strand Bookstore     85         \n0       Katz\u0027s Delicatessen  79         \n0       Ippudo               73         \n0       Trader Joe\u0027s         70         \n0       Momofuku Noodle Bar  66         \n0       Whole Foods Marke... 62         \n0       The Grey Dog\u0027s Co... 59         \n0       Webster Hall         58         \n0       Momofuku Milk Bar    58         \n0       Veselka              55         \n0       Schiller\u0027s Liquor... 54         \n0       Think Coffee         53         \n0       Foursquare HQ        52         \n0       Astor Place Station  50         \n0       Momofuku Ssäm Bar    48         \n0       Max Brenner          48         \n"
+      },
+      "dateCreated": "May 28, 2015 3:21:21 PM",
+      "dateStarted": "Jul 9, 2015 12:23:13 AM",
+      "dateFinished": "Jul 9, 2015 12:23:52 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// from fd to rdd\nval r \u003d df.rdd.map(row \u003d\u003e (row.getInt(0), (row.getString(1), row.getLong(2))) ).cache()\n\nr.first",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1434450862357_-1462192328",
+      "id": "20150616-123422_2132697783",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "r: org.apache.spark.rdd.RDD[(Int, (String, Long))] \u003d MapPartitionsRDD[164] at map at \u003cconsole\u003e:58\nres67: (Int, (String, Long)) \u003d (0,(Starbucks Coffee,172))\n"
+      },
+      "dateCreated": "Jun 16, 2015 12:34:22 PM",
+      "dateStarted": "Jul 9, 2015 12:23:57 AM",
+      "dateFinished": "Jul 9, 2015 12:24:24 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val topNPerGroup \u003d r.groupByKey.map { \n   case (k, v) \u003d\u003e \n       k -\u003e v.toList.sortBy(-_._2).take(3)\n}\n\ntopNPerGroup.collect.foreach(println)",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1434454009943_131618446",
+      "id": "20150616-132649_590619108",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "topNPerGroup: org.apache.spark.rdd.RDD[(Int, List[(String, Long)])] \u003d MapPartitionsRDD[166] at map at \u003cconsole\u003e:59\n(0,List((Starbucks Coffee,172), (Regal Union Square Stadium 14,118), (Whole Foods Market (Union Square),95)))\n(1,List((Nuno\u0027s Pavillion,48), (Elizabeth Train Station,19), (Quick Check,17)))\n(2,List((Starbucks,249), (Radio City Music Hall,237), (Columbus Circle,174)))\n(3,List((JFK John F. Kennedy International,1643), (JFK Terminal 5,325), (Terminal 4 at JFK,115)))\n(4,List((Columbia University,110), (The City College Of New York - NAC Building,58), (Harlem—125th Street Metro North Station,49)))\n(5,List((EWR Newark Liberty International,1084), (EWR Terminal A,167), (EWR Terminal C,162)))\n(6,List((Throgs Neck Bridge Toll,117), (Throgs Neck Bridge,86), (Whitestone Bridge,25)))\n(7,List((RHM Headquarters,36), (Egan\u0027s,22), (Edgemont Memorial Park,18)))\n(8,List((Dunkin\u0027 Donuts,88), (Verrazano-Narrows Bridge,77), (New York Sports Club ,59)))\n(9,List((Queensboro Plaza Station,51), (Bohemian Hall \u0026 Beer Garden,36), (Studio Square Beer Garden,31)))\n(10,List((Secaucus Junction,113), (Xchange,16), (Starbucks,15)))\n(11,List((Trader Joe\u0027s,69), (IKEA,62), (Starbucks Coffee,54)))\n(12,List((LIRR Bayside Station,24), (Chino Rican Tattoo \u0026 Body Art,24), (Clearview Expressway,21)))\n(13,List((Citi Field,156), (Arthur Ashe Stadium,57), (Billie Jean King National Tennis Center,30)))\n(14,List((Mitsuwa Marketplace,33), (Vince Lombardi Service Area,24), (Panera Bread,14)))\n(15,List((Starbucks,27), (AMC Clifton Commons 16,20), (Signature Fitness,18)))\n(16,List((Apple Store, West 14th Street,252), (The High Line,207), (The Chelsea Market,171)))\n(17,List((Holland Tunnel,144), (Starbucks,89), (Hoboken Terminal,55)))\n(18,List((Starbucks #07897,34), (Kingdom of Legions and Ninjas,17), (Fruit Ranch,16)))\n(19,List((Times Square,1084), (Madison Square Garden,426), (Bryant Park,363)))\n(20,List((South Mountain Yoga,16), (Seton Hall University,9), (McDonald\u0027s,4)))\n(21,List((Myrtle—Wycoff Avenues Station,41), (Roberta\u0027s,28), (292 Park,19)))\n(22,List((Newark Penn Station,234), (Redwood Hall,51), (Prudential Center,49)))\n(23,List((Bronx VA Hospital,35), (The Cloisters,30), (2020 Grand Ave,28)))\n(24,List((New Rochelle Station,21), (Pelham Metro-North Station,12), (X Haus,11)))\n(25,List((Brooklyn Bowl,80), (The Bagel Store,55), (McCarren Park,54)))\n(26,List((Staten Island Ferry,97), (Middle Of The Harbor,19), (Richmond County Bank Ballpark,11)))\n(27,List((Bay Plaza,27), (Pelham Bay Park,24), (3555 Bruckner Blvd,16)))\n(28,List((Garden State Plaza,65), (AMC Garden State 16,27), (Apple Store, Paramus,25)))\n(29,List((Apple Store, Staten Island,54), (Staten Island Mall,23), (Starbucks,8)))\n(30,List((The Bronx Zoo,45), (New York Botanical Garden,25), (Fordham Metro-North Station,19)))\n(31,List((Hillcrest Firehouse: PFD,15), (La Ziza,12), (Old Roberto Clemente,12)))\n(32,List((New Meadowlands Stadium,66), (Izod Center,32), (Station Square,27)))\n(33,List((Apple Store, SoHo,223), (Starbucks Coffee,216), (VaynerMedia HQ,211)))\n(34,List((Milk Bar,62), (Bagel World,58), (Union Street Station,54)))\n(35,List((Grand Central Terminal,1002), (The Museum of Modern Art (MoMA),392), (Rockefeller Center,353)))\n(36,List((LGA LaGuardia Airport,1673), (Terminal C at LGA,131), (LGA Marine Air Terminal,63)))\n(37,List((Statue of Liberty,124), (Journal Square PATH Station,79), (Ellis Island,44)))\n(38,List((Starbucks,176), (Carlos And Kelseys Place,65), (Whitney Museum of Art,64)))\n(39,List((Staten Island Zoo,19), (Burrito Bar,19), (Starbucks Coffee,17)))\n(40,List((Target,12), (Home Sweet Home,12), (Kings Plaza,8)))\n(41,List((Queens Center Mall,25), (61st Street—Woodside Station,24), (SriPraPhai,22)))\n(42,List((Retro Fitness,57), (Riverside Square Mall,23), (Bergen County Academies,13)))\n(43,List((Target,21), (Applebee\u0027s,10), (Cheeburger Cheeburger,8)))\n(44,List((Yankee Stadium,370), (George Washington Bridge,184), (625 W 156 Street,64)))\n(45,List((World Trade Center (Ground Zero),165), (Battery Park,132), (Starbucks Coffee,130)))\n(46,List((Coney Island Boardwalk,71), (Nathan\u0027s Famous Frankfurters,53), (New York Aquarium,22)))\n(47,List((Empire State Building,389), (Union Square,333), (Ace Hotel,277)))\n(48,List((Jamaica LIRR Station,124), (Jamaica Airtrain,26), (DEP 24,13)))\n(49,List((MTA Beach 67 St [A],19), (Beach 67th,11), (Delta Sky Club,10)))\n"
+      },
+      "dateCreated": "Jun 16, 2015 1:26:49 PM",
+      "dateStarted": "Jul 9, 2015 12:24:48 AM",
+      "dateFinished": "Jul 9, 2015 12:25:17 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// flattening this to a single list\nval flattenedTopNPerGroup \u003d \n    topNPerGroup.flatMap({case (k,v) \u003d\u003e v.map(s \u003d\u003e (k,s))})\n\nflattenedTopNPerGroup.collect.foreach(println)",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1434454903370_-417007247",
+      "id": "20150616-134143_374297113",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "flattenedTopNPerGroup: org.apache.spark.rdd.RDD[(Int, (String, Long))] \u003d MapPartitionsRDD[167] at flatMap at \u003cconsole\u003e:63\n(0,(Starbucks Coffee,172))\n(0,(Regal Union Square Stadium 14,118))\n(0,(Whole Foods Market (Union Square),95))\n(1,(Nuno\u0027s Pavillion,48))\n(1,(Elizabeth Train Station,19))\n(1,(Quick Check,17))\n(2,(Starbucks,249))\n(2,(Radio City Music Hall,237))\n(2,(Columbus Circle,174))\n(3,(JFK John F. Kennedy International,1643))\n(3,(JFK Terminal 5,325))\n(3,(Terminal 4 at JFK,115))\n(4,(Columbia University,110))\n(4,(The City College Of New York - NAC Building,58))\n(4,(Harlem—125th Street Metro North Station,49))\n(5,(EWR Newark Liberty International,1084))\n(5,(EWR Terminal A,167))\n(5,(EWR Terminal C,162))\n(6,(Throgs Neck Bridge Toll,117))\n(6,(Throgs Neck Bridge,86))\n(6,(Whitestone Bridge,25))\n(7,(RHM Headquarters,36))\n(7,(Egan\u0027s,22))\n(7,(Edgemont Memorial Park,18))\n(8,(Dunkin\u0027 Donuts,88))\n(8,(Verrazano-Narrows Bridge,77))\n(8,(New York Sports Club ,59))\n(9,(Queensboro Plaza Station,51))\n(9,(Bohemian Hall \u0026 Beer Garden,36))\n(9,(Studio Square Beer Garden,31))\n(10,(Secaucus Junction,113))\n(10,(Xchange,16))\n(10,(Starbucks,15))\n(11,(Trader Joe\u0027s,69))\n(11,(IKEA,62))\n(11,(Starbucks Coffee,54))\n(12,(LIRR Bayside Station,24))\n(12,(Chino Rican Tattoo \u0026 Body Art,24))\n(12,(Clearview Expressway,21))\n(13,(Citi Field,156))\n(13,(Arthur Ashe Stadium,57))\n(13,(Billie Jean King National Tennis Center,30))\n(14,(Mitsuwa Marketplace,33))\n(14,(Vince Lombardi Service Area,24))\n(14,(Panera Bread,14))\n(15,(Starbucks,27))\n(15,(AMC Clifton Commons 16,20))\n(15,(Signature Fitness,18))\n(16,(Apple Store, West 14th Street,252))\n(16,(The High Line,207))\n(16,(The Chelsea Market,171))\n(17,(Holland Tunnel,144))\n(17,(Starbucks,89))\n(17,(Hoboken Terminal,55))\n(18,(Starbucks #07897,34))\n(18,(Kingdom of Legions and Ninjas,17))\n(18,(Fruit Ranch,16))\n(19,(Times Square,1084))\n(19,(Madison Square Garden,426))\n(19,(Bryant Park,363))\n(20,(South Mountain Yoga,16))\n(20,(Seton Hall University,9))\n(20,(McDonald\u0027s,4))\n(21,(Myrtle—Wycoff Avenues Station,41))\n(21,(Roberta\u0027s,28))\n(21,(292 Park,19))\n(22,(Newark Penn Station,234))\n(22,(Redwood Hall,51))\n(22,(Prudential Center,49))\n(23,(Bronx VA Hospital,35))\n(23,(The Cloisters,30))\n(23,(2020 Grand Ave,28))\n(24,(New Rochelle Station,21))\n(24,(Pelham Metro-North Station,12))\n(24,(X Haus,11))\n(25,(Brooklyn Bowl,80))\n(25,(The Bagel Store,55))\n(25,(McCarren Park,54))\n(26,(Staten Island Ferry,97))\n(26,(Middle Of The Harbor,19))\n(26,(Richmond County Bank Ballpark,11))\n(27,(Bay Plaza,27))\n(27,(Pelham Bay Park,24))\n(27,(3555 Bruckner Blvd,16))\n(28,(Garden State Plaza,65))\n(28,(AMC Garden State 16,27))\n(28,(Apple Store, Paramus,25))\n(29,(Apple Store, Staten Island,54))\n(29,(Staten Island Mall,23))\n(29,(Starbucks,8))\n(30,(The Bronx Zoo,45))\n(30,(New York Botanical Garden,25))\n(30,(Fordham Metro-North Station,19))\n(31,(Hillcrest Firehouse: PFD,15))\n(31,(La Ziza,12))\n(31,(Old Roberto Clemente,12))\n(32,(New Meadowlands Stadium,66))\n(32,(Izod Center,32))\n(32,(Station Square,27))\n(33,(Apple Store, SoHo,223))\n(33,(Starbucks Coffee,216))\n(33,(VaynerMedia HQ,211))\n(34,(Milk Bar,62))\n(34,(Bagel World,58))\n(34,(Union Street Station,54))\n(35,(Grand Central Terminal,1002))\n(35,(The Museum of Modern Art (MoMA),392))\n(35,(Rockefeller Center,353))\n(36,(LGA LaGuardia Airport,1673))\n(36,(Terminal C at LGA,131))\n(36,(LGA Marine Air Terminal,63))\n(37,(Statue of Liberty,124))\n(37,(Journal Square PATH Station,79))\n(37,(Ellis Island,44))\n(38,(Starbucks,176))\n(38,(Carlos And Kelseys Place,65))\n(38,(Whitney Museum of Art,64))\n(39,(Staten Island Zoo,19))\n(39,(Burrito Bar,19))\n(39,(Starbucks Coffee,17))\n(40,(Target,12))\n(40,(Home Sweet Home,12))\n(40,(Kings Plaza,8))\n(41,(Queens Center Mall,25))\n(41,(61st Street—Woodside Station,24))\n(41,(SriPraPhai,22))\n(42,(Retro Fitness,57))\n(42,(Riverside Square Mall,23))\n(42,(Bergen County Academies,13))\n(43,(Target,21))\n(43,(Applebee\u0027s,10))\n(43,(Cheeburger Cheeburger,8))\n(44,(Yankee Stadium,370))\n(44,(George Washington Bridge,184))\n(44,(625 W 156 Street,64))\n(45,(World Trade Center (Ground Zero),165))\n(45,(Battery Park,132))\n(45,(Starbucks Coffee,130))\n(46,(Coney Island Boardwalk,71))\n(46,(Nathan\u0027s Famous Frankfurters,53))\n(46,(New York Aquarium,22))\n(47,(Empire State Building,389))\n(47,(Union Square,333))\n(47,(Ace Hotel,277))\n(48,(Jamaica LIRR Station,124))\n(48,(Jamaica Airtrain,26))\n(48,(DEP 24,13))\n(49,(MTA Beach 67 St [A],19))\n(49,(Beach 67th,11))\n(49,(Delta Sky Club,10))\n"
+      },
+      "dateCreated": "Jun 16, 2015 1:41:43 PM",
+      "dateStarted": "Jul 9, 2015 12:25:46 AM",
+      "dateFinished": "Jul 9, 2015 12:25:50 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1434541066637_-850759271",
+      "id": "20150617-133746_2078567635",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT"
+      },
+      "dateCreated": "Jun 17, 2015 1:37:46 PM",
+      "dateStarted": "Jun 18, 2015 10:17:48 AM",
+      "dateFinished": "Jun 18, 2015 10:17:51 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Location Based Social Networks: Spark and Cassandra",
+  "id": "2ARJB9DQS",
+  "angularObjects": {},
+  "config": {
+    "looknfeel": "default"
+  },
+  "info": {}
+}

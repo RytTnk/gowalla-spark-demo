@@ -6,7 +6,7 @@
 # curl
 # wget
 
-DEMO_HOME=`pwd`
+export DEMO_HOME=`pwd`
 
 # start all
 cd $DEMO_HOME

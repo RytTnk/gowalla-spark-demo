@@ -56,7 +56,7 @@ cd $DEMO_HOME;
 # build from source spark and install artifacts locally in .m2
 git clone https://github.com/datastax/spark-cassandra-connector.git
 
-cd $DEMO_HOME/spark-cassandra-connector
+SPARK_CASSANDRA_CONNECTOR_HOME=$DEMO_HOME/spark-cassandra-connector
 git checkout adcf7892dbffff1faa401dd9e8b93ff54090e5ec
 
 sbt/sbt clean assembly

@@ -1,39 +1,6 @@
 {
   "paragraphs": [
     {
-      "text": "sc.version",
-      "config": {
-        "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "editorHide": false,
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1432590045384_541076151",
-      "id": "20150525-234045_1993672298",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "res0: String \u003d 1.3.1\n"
-      },
-      "dateCreated": "May 25, 2015 11:40:45 PM",
-      "dateStarted": "Jul 9, 2015 12:17:30 AM",
-      "dateFinished": "Jul 9, 2015 12:17:52 AM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
       "title": "Load the cassandra-Spark connector library",
       "text": "import com.datastax.spark.connector._\nimport com.datastax.spark.connector.cql._",
       "config": {
@@ -217,7 +184,7 @@
           "scatter": {}
         },
         "tableHide": false,
-        "editorHide": false,
+        "editorHide": true,
         "title": true
       },
       "settings": {

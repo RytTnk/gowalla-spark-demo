@@ -5,7 +5,7 @@ Spark and Cassandra provide a good alternative to traditional big data architect
 
 As a demo we will cluster check-in transactions in New York using the gowalla dataset. Clustering will be performed on Spark using the ml-lib library of spark and data will be extracted from cassandra using the Spark-Cassandra connector.
 
-Tutorial: 
+Tutorial: http://www.natalinobusa.com/2015/07/clustering-check-ins-with-spark-and.html
 
 ### Install and Setup
 
